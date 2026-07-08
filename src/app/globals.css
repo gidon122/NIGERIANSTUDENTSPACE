@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand core ---- */
+  --color-brand-black: #0a0a0a;
+  --color-brand-green: #146c36;
+  --color-brand-white: #ffffff;
+
+  /* ---- Green scale (primary brand color) ---- */
+  --color-green-50:  #eafbf1;
+  --color-green-100: #cdf3dc;
+  --color-green-200: #9de6bc;
+  --color-green-300: #63d197;
+  --color-green-400: #34b877;
+  --color-green-500: #1c9a5e;
+  --color-green-600: #146c36;   /* ← matches badge, use as primary */
+  --color-green-700: #10552b;
+  --color-green-800: #0d4423;
+  --color-green-900: #0a331b;
+
+  /* ---- Neutral / black scale ---- */
+  --color-neutral-0:   #ffffff;
+  --color-neutral-50:  #f7f7f8;
+  --color-neutral-100: #eeeeef;
+  --color-neutral-200: #dcdcde;
+  --color-neutral-300: #b8b9bd;
+  --color-neutral-400: #8b8c92;
+  --color-neutral-500: #5e5f66;
+  --color-neutral-600: #3f4046;
+  --color-neutral-700: #26272b;
+  --color-neutral-800: #17181a;
+  --color-neutral-900: #0a0a0a;  /* ← matches logo background */
+
+  /* ---- Semantic tokens (what components actually reference) ---- */
+  --color-primary: var(--color-green-600);
+  --color-primary-hover: var(--color-green-700);
+  --color-primary-active: var(--color-green-800);
+  --color-primary-foreground: var(--color-neutral-0);
+
+  --color-secondary: var(--color-neutral-900);
+  --color-secondary-hover: var(--color-neutral-800);
+  --color-secondary-foreground: var(--color-neutral-0);
+
+  --color-background: var(--color-neutral-0);
+  --color-surface: var(--color-neutral-50);
+  --color-surface-dark: var(--color-neutral-900);
+
+  --color-ink: var(--color-neutral-900);
+  --color-ink-muted: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
+
+  --color-success: #1c9a5e;
+  --color-warning: #b8860b;
+  --color-danger:  #c02f2f;
+  --color-info:    #1f5fa8;
+
+  /* ---- Typography ---- */
+  --font-sans: "Plus Jakarta Sans", "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Radius scale (matches the rounded, chunky logo lettering) ---- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* ---------------------------------- */
+/* Base layer                         */
+/* ---------------------------------- */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Consistent, visible focus ring everywhere — Section 10.6 of the spec */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  ::selection {
+    background-color: var(--color-green-100);
+    color: var(--color-green-900);
+  }
+}
+
+/* ---------------------------------- */
+/* Reusable utility classes           */
+/* ---------------------------------- */
+
+@layer utilities {
+  .bg-brand-dark {
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-0);
+  }
+
+  .section-padding {
+    padding-block: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-block: 6rem;
+    }
+  }
+}
+
+  /* Components: Features panel and cards */
+  @layer components {
+    .features-panel {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      box-shadow: 0 10px 30px rgba(16,24,40,0.04);
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.75rem;
+      border-radius: var(--radius-md);
+      transition: background-color 150ms ease, transform 120ms ease;
+    }
+
+    .feature-card:hover {
+      background-color: var(--color-neutral-50);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      width: 3rem;
+      height: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: calc(var(--radius-md));
+      background-color: var(--color-green-100);
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .feature-title {
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .feature-desc {
+      margin: 0;
+      color: var(--color-ink-muted);
+      font-size: 0.8125rem;
+      margin-top: 0.25rem;
+    }
+  }
+
+/* Event card component */
+@layer components {
+  .event-card {
+    border: 1px solid var(--color-border);
+    box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  }
+
+  .event-badge {
+    min-width: 4rem;
+    min-height: 4rem;
+    text-align: center;
+  }
+
+  .event-thumb img {
+    display: block;
+  }
+
+  .event-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
