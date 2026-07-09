@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import logo from '@/public/logos/IMG-20260702-WA0000.jpg';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Programs', href: '/programs' },
-    { name: 'Nuggets', href: '/nuggets' },
+    // { name: 'Nuggets', href: '/nuggets' },
     { name: 'Opportunities', href: '/opportunities' },
     { name: 'Resources', href: '/resources' },
     { name: 'Community', href: '/community' },
@@ -23,19 +24,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b" style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-background)', backdropFilter: 'blur(12px)' }}>
       <div className="mx-auto flex max-w-7xl h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <div 
-            className="flex h-9 w-9 items-center justify-center font-bold text-white shadow-md transition-transform hover:scale-105"
-            style={{ 
-              backgroundColor: 'var(--color-primary)',
-              borderRadius: 'var(--radius-md)'
-            }}
-          >
-            NSS
-          </div>
-          <span className="text-lg font-bold tracking-tight" style={{ color: 'var(--color-ink)' }}>
-            NSS <span style={{ color: 'var(--color-primary)' }}>Portal</span>
-          </span>
+        <Link href="/" className="flex items-center gap-3">
+          <img src={logo.src} alt="NSS Logo" className="h-13 w-13 object-cover" />
         </Link>
 
         {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Testimonial from '@/src/components/sections/Testimonials/Testimonial';
 
 const communityHighlights = [
   {
@@ -22,20 +23,20 @@ const stats = [
   { label: 'Partners', value: '20+' },
 ];
 
-const testimonials = [
-  {
-    quote: 'NSS gave me a platform to discover my passion and connect with others.',
-    author: 'Blessing K., University of Lagos',
-  },
-  {
-    quote: 'Through NSS, I got a scholarship and mentorship that changed my life.',
-    author: 'Joseph A., University of Benin',
-  },
-  {
-    quote: 'The community helped me build the confidence to lead in my campus chapter.',
-    author: 'Chidera O., Covenant University',
-  },
-];
+// const testimonials = [
+//   {
+//     quote: 'NSS gave me a platform to discover my passion and connect with others.',
+//     author: 'Blessing K., University of Lagos',
+//   },
+//   {
+//     quote: 'Through NSS, I got a scholarship and mentorship that changed my life.',
+//     author: 'Joseph A., University of Benin',
+//   },
+//   {
+//     quote: 'The community helped me build the confidence to lead in my campus chapter.',
+//     author: 'Chidera O., Covenant University',
+//   },
+// ];
 
 export default function Page() {
   return (
@@ -115,32 +116,7 @@ export default function Page() {
       </section>
 
       <section className="section-padding bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-green-700">Student voices</p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">What our members are saying</h2>
-            </div>
-            <Link
-              href="/community"
-              className="inline-flex items-center justify-center rounded-full border border-green-600 bg-green-50 px-5 py-2.5 text-sm font-semibold text-green-700 transition hover:bg-green-100"
-            >
-              View all stories
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            {testimonials.map((item, index) => (
-              <div key={index} className="feature-card rounded-[1.5rem] bg-surface p-6 shadow-sm">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-3xl bg-green-100 text-green-700 text-xl font-semibold">
-                  “
-                </div>
-                <p className="text-base leading-7 text-neutral-700">{item.quote}</p>
-                <p className="mt-6 text-sm font-semibold text-neutral-900">{item.author}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+       <Testimonial/>
       </section>
     </main>
   );

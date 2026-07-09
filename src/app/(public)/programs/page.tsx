@@ -1,34 +1,35 @@
+import Program from '@/src/components/sections/Programs/Program';
 import Link from 'next/link';
 
-const upcomingEvents = [
-  {
-    id: 'leadership-summit-2024',
-    date: '24',
-    month: 'MAY',
-    title: 'Campus Leadership Summit 2024',
-    time: '10:00 AM - 2:00 PM',
-    location: 'University of Lagos',
-    href: '/events/leadership-summit-2024',
-  },
-  {
-    id: 'career-webinar',
-    date: '15',
-    month: 'JUN',
-    title: 'Career Development Webinar',
-    time: '6:00 PM - 8:00 PM',
-    location: 'Virtual (Zoom)',
-    href: '/events/career-development-webinar',
-  },
-  {
-    id: 'annual-conference',
-    date: '10',
-    month: 'AUG',
-    title: 'NSS Annual Student Conference',
-    time: '9:00 AM - 4:00 PM',
-    location: 'Abeokuta, Nigeria',
-    href: '/events/nss-annual-conference',
-  },
-];
+// const upcomingEvents = [
+//   {
+//     id: 'leadership-summit-2024',
+//     date: '24',
+//     month: 'MAY',
+//     title: 'Campus Leadership Summit 2024',
+//     time: '10:00 AM - 2:00 PM',
+//     location: 'University of Lagos',
+//     href: '/events/leadership-summit-2024',
+//   },
+//   {
+//     id: 'career-webinar',
+//     date: '15',
+//     month: 'JUN',
+//     title: 'Career Development Webinar',
+//     time: '6:00 PM - 8:00 PM',
+//     location: 'Virtual (Zoom)',
+//     href: '/events/career-development-webinar',
+//   },
+//   {
+//     id: 'annual-conference',
+//     date: '10',
+//     month: 'AUG',
+//     title: 'NSS Annual Student Conference',
+//     time: '9:00 AM - 4:00 PM',
+//     location: 'Abeokuta, Nigeria',
+//     href: '/events/nss-annual-conference',
+//   },
+// ];
 
 export default function Page() {
   return (
@@ -44,7 +45,11 @@ export default function Page() {
           </p>
         </div>
 
-        <div
+        <div className="mt-12">
+          <Program hideHeader />
+        </div>
+
+        {/* <div
           className="mt-12 overflow-hidden rounded-[2rem] border border-neutral-200 bg-white shadow-sm"
           style={{ backgroundColor: 'var(--color-background)' }}
         >
@@ -113,7 +118,7 @@ export default function Page() {
               </article>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
     </main>
   );

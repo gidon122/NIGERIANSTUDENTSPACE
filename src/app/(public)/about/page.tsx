@@ -1,6 +1,7 @@
 'use client';
 
 import { User, Target, Award, TrendingUp } from 'lucide-react';
+import Leadership from '../../../components/sections/Leadership/Leadership';
 
 export default function About() {
   const features = [
@@ -26,12 +27,7 @@ export default function About() {
     },
   ];
 
-  const teamMembers = [
-    { name: 'Faith A.', title: 'Founder / Patron', initials: 'FA' },
-    { name: 'Jude', title: 'President', initials: 'JU' },
-    { name: 'Deborah O.', title: 'Programs Director', initials: 'DO' },
-    { name: 'Blessing A.', title: 'Communications Lead', initials: 'BA' },
-  ];
+
 
   return (
     <>
@@ -134,61 +130,7 @@ export default function About() {
         </section>
 
         {/* Leadership Team Section */}
-        <section 
-          className="px-4 py-16 sm:px-6 lg:px-8"
-          style={{ backgroundColor: 'var(--color-surface)' }}
-        >
-          <div className="mx-auto max-w-7xl">
-            <div className="mb-12">
-              <h2 
-                className="text-3xl font-bold mb-2"
-                style={{ color: 'var(--color-ink)' }}
-              >
-                Leadership Team
-              </h2>
-              <p 
-                className="text-lg"
-                style={{ color: 'var(--color-ink-muted)' }}
-              >
-                Meet the passionate leaders driving NSS forward
-              </p>
-            </div>
-
-            <div className="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
-              {teamMembers.map((member, index) => (
-                <div 
-                  key={index}
-                  className="flex flex-col items-center text-center p-6 rounded-lg transition-all duration-200 hover:shadow-md"
-                  style={{ backgroundColor: 'var(--color-background)' }}
-                >
-                  {/* Avatar */}
-                  <div 
-                    className="h-20 w-20 rounded-full flex items-center justify-center mb-4 text-2xl font-semibold text-white"
-                    style={{ backgroundColor: 'var(--color-primary)' }}
-                  >
-                    {member.initials}
-                  </div>
-
-                  {/* Name */}
-                  <h3 
-                    className="text-lg font-semibold mb-1"
-                    style={{ color: 'var(--color-ink)' }}
-                  >
-                    {member.name}
-                  </h3>
-
-                  {/* Title */}
-                  <p 
-                    className="text-sm"
-                    style={{ color: 'var(--color-ink-muted)' }}
-                  >
-                    {member.title}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Leadership />
       </main>
     </>
   );
