@@ -1,4 +1,5 @@
 import Hero from '../../components/sections/Hero/hero';
+import Program from '@/src/components/sections/Programs/Program';
 import Testimonial from '@/src/components/sections/Testimonials/Testimonial';
 
 export default function Page() {
@@ -64,6 +65,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <Program />
 
       <Testimonial />
 
