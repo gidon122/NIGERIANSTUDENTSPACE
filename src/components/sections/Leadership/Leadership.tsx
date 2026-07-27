@@ -46,40 +46,6 @@ export default function Leadership() {
 
         {/* Leadership Grid */}
         <LeadershipGrid leaders={leaders} />
-
-        {/* CTA Footer Banner */}
-        <div 
-          className="mt-16 rounded-2xl p-8 md:p-10 border text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm"
-          style={{
-            background: 'linear-gradient(135deg, var(--color-surface, #ffffff) 0%, var(--color-neutral-50, #f9fafb) 100%)',
-            borderColor: 'var(--color-border, #e5e7eb)',
-          }}
-        >
-          <div className="max-w-xl">
-            <h3 
-              className="text-xl font-bold mb-2 flex items-center justify-center md:justify-start gap-2"
-              style={{ color: 'var(--color-ink, #111827)' }}
-            >
-              <Compass className="h-5 w-5 text-emerald-600" />
-              Interested in joining NSS Leadership?
-            </h3>
-            <p 
-              className="text-sm leading-relaxed"
-              style={{ color: 'var(--color-ink-muted, #4b5563)' }}
-            >
-              We are constantly seeking passionate student leaders, campus ambassadors, and event coordinators to join our mission.
-            </p>
-          </div>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white shadow-md transition-all duration-200 hover:shadow-lg active:scale-95 whitespace-nowrap"
-            style={{ backgroundColor: 'var(--color-primary, #16a34a)' }}
-          >
-            Get In Touch
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
       </div>
     </section>
   );
